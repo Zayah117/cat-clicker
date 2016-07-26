@@ -1,0 +1,10 @@
+body {
+	text-align: center;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
+img {
+	width: 50%;
+	height: 50%;
+	min-width: 300px;
+}
