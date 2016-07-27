@@ -33,7 +33,7 @@ tiger = new Cat('Tiger', 'images/tiger.jpg');
 
 cats = [bob, sally, max, sebastian, lilly, tiger];
 
-for (var i = cats.length - 1; i >= 0; i--) {
+for (var i = 0; i < cats.length; i++) {
 	initializeKittyCat(cats[i]);
 }
 
