@@ -18,7 +18,7 @@ function initializeKittyCat(kittyCat) {
 	kittyCat.imageView.attr("src", kittyCat.image);
 }
 
-bob = new Cat('Bob', $('#name'), 'images/cat.jpg', $('#cat-image'), 0, $('#times-clicked'));
+bob = new Cat('Bob', $('#name'), 'images/bob.jpg', $('#cat-image'), 0, $('#times-clicked'));
 sally = new Cat('Sally', $('#name-2'), 'images/sally.jpg', $('#cat-image-2'), 0, $('#times-clicked-2'));
 cats = [bob, sally];
 
