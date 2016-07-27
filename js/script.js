@@ -29,19 +29,24 @@ function initializeKittyCat(kittyCat) {
 	})
 }
 
-bob = new Cat('Bob', 'images/colors/grey.png');
-sally = new Cat('Sally', 'images/colors/black.png');
-max = new Cat('Max', 'images/colors/white.png');
-sebastian = new Cat('Sebastian', 'images/colors/blue.png');
-lilly = new Cat('Lilly', 'images/colors/purple.png');
-tiger = new Cat('Tiger', 'images/colors/orange.png');
-
-cats = [bob, sally, max, sebastian, lilly, tiger];
-
-for (var i = 0; i < cats.length; i++) {
-	initializeKittyCat(cats[i]);
+function checkName(name, array){
+	return array.indexOf(name) > -1;
 }
 
+cats = [];
+
 $('#button').click(function() {
-	console.log('hi');
+	myName = $('#cat-name').val();
+	myColor = $('#color-select').val();
+
+
+	if (checkName(myName, cats) === false) {
+		cats.push(myName);
+		window[myName] = new Cat(myName, 'images/colors/' + myColor + '.png');
+		initializeKittyCat(window[myName]);
+	} else {
+		window.alert("Name not valid.");
+	}
+
+	
 });
