@@ -1,10 +1,10 @@
-var Cat = function(name, nameLabel, image, imageView, timesClicked, clickLabel) {
+var Cat = function(name, image) {
 	this.name = name;
-	this.nameLabel = nameLabel;
 	this.image = image;
-	this.imageView = imageView;
-	this.timesClicked = timesClicked;
-	this.clickLabel = clickLabel;
+	this.timesClicked = 0;
+	this.nameLabel = null;
+	this.imageView = null;
+	this.clickLabel = null;
 };
 
 Cat.prototype.clicker = function(timesClicked, clickLabel) {
@@ -14,12 +14,18 @@ Cat.prototype.clicker = function(timesClicked, clickLabel) {
 };
 
 function initializeKittyCat(kittyCat) {
+	$('#main').append('<figure><h4 id="' + kittyCat.name + '-name"></h4><img id="' + kittyCat.name + '-image"><figcaption id="' + kittyCat.name + '-times-clicked">Times clicked: 0</figcaption></figure>')
+
+	kittyCat.nameLabel = $("#" + kittyCat.name + "-name");
+	kittyCat.imageView = $("#" + kittyCat.name + "-image");
+	kittyCat.clickLabel = $("#" + kittyCat.name + "-times-clicked");
+
 	kittyCat.nameLabel.html(kittyCat.name);
 	kittyCat.imageView.attr("src", kittyCat.image);
 }
 
-bob = new Cat('Bob', $('#name'), 'images/bob.jpg', $('#cat-image'), 0, $('#times-clicked'));
-sally = new Cat('Sally', $('#name-2'), 'images/sally.jpg', $('#cat-image-2'), 0, $('#times-clicked-2'));
+bob = new Cat('Bob', 'images/bob.jpg');
+sally = new Cat('Sally', 'images/sally.jpg');
 cats = [bob, sally];
 
 for (var i = cats.length - 1; i >= 0; i--) {
