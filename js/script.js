@@ -33,12 +33,29 @@ function initializeKittyCat(kittyCat) {
 	})
 
 	kittyCat.deleteButton.click(function() {
-		kittyCat.figure.remove();
+		deleteCat(kittyCat, cats);
 	});
 }
 
-function checkName(name, array){
-	return array.indexOf(name) > -1;
+function validName(name, catArray){
+	if (name == "") {
+		return false;
+	}
+	for (var i = catArray.length - 1; i >= 0; i--) {
+		if (name == catArray[i].name) {
+			return false;
+		}
+	}
+	return true;
+}
+
+function deleteCat(kittyCat, catArray) {
+	kittyCat.figure.remove();
+	for (var i = catArray.length - 1; i >= 0; i--) {
+		if (catArray[i] === kittyCat) {
+			catArray.splice(i, 1);
+		}
+	}
 }
 
 cats = [];
@@ -48,10 +65,10 @@ $('#button').click(function() {
 	myColor = $('#color-select').val();
 
 
-	if (checkName(myName, cats) === false && myName != "") {
-		cats.push(myName);
+	if (validName(myName, cats)) {
 		window[myName] = new Cat(myName, 'images/colors/' + myColor + '.png');
 		initializeKittyCat(window[myName]);
+		cats.push(window[myName]);
 	} else {
 		window.alert("Name not valid.");
 	}
