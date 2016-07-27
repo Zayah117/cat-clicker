@@ -26,7 +26,12 @@ function initializeKittyCat(kittyCat) {
 
 bob = new Cat('Bob', 'images/bob.jpg');
 sally = new Cat('Sally', 'images/sally.jpg');
-cats = [bob, sally];
+max = new Cat('Max', 'images/max.jpg');
+sebastian = new Cat('Sebastian', 'images/sebastian.jpg');
+lilly = new Cat('Lilly', 'images/lilly.jpg');
+tiger = new Cat('Tiger', 'images/tiger.jpg');
+
+cats = [bob, sally, max, sebastian, lilly, tiger];
 
 for (var i = cats.length - 1; i >= 0; i--) {
 	initializeKittyCat(cats[i]);
