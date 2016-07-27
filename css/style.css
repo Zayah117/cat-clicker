@@ -7,4 +7,9 @@ img {
 	width: 50%;
 	height: 50%;
 	min-width: 300px;
+	padding: 5px;
+}
+
+#main {
+	display: inline-flex;
 }
