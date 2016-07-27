@@ -13,6 +13,7 @@ Cat.prototype.clicker = function(timesClicked, clickLabel) {
 	return timesClicked;
 };
 
+
 function initializeKittyCat(kittyCat) {
 	$('#main').append('<figure><h4 id="' + kittyCat.name + '-name"></h4><img id="' + kittyCat.name + '-image"><figcaption id="' + kittyCat.name + '-times-clicked">Times clicked: 0</figcaption></figure>')
 
@@ -22,6 +23,10 @@ function initializeKittyCat(kittyCat) {
 
 	kittyCat.nameLabel.html(kittyCat.name);
 	kittyCat.imageView.attr("src", kittyCat.image);
+
+	kittyCat.imageView.click(function(e){
+		kittyCat.timesClicked = kittyCat.clicker(kittyCat.timesClicked, kittyCat.clickLabel);
+	})
 }
 
 bob = new Cat('Bob', 'images/bob.jpg');
@@ -36,11 +41,3 @@ cats = [bob, sally, max, sebastian, lilly, tiger];
 for (var i = 0; i < cats.length; i++) {
 	initializeKittyCat(cats[i]);
 }
-
-bob.imageView.click(function(e) {
-	bob.timesClicked = bob.clicker(bob.timesClicked, bob.clickLabel);
-});
-
-sally.imageView.click(function(e) {
-	sally.timesClicked = sally.clicker(sally.timesClicked, sally.clickLabel);
-});
