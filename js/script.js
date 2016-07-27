@@ -29,15 +29,19 @@ function initializeKittyCat(kittyCat) {
 	})
 }
 
-bob = new Cat('Bob', 'images/bob.jpg');
-sally = new Cat('Sally', 'images/sally.jpg');
-max = new Cat('Max', 'images/max.jpg');
-sebastian = new Cat('Sebastian', 'images/sebastian.jpg');
-lilly = new Cat('Lilly', 'images/lilly.jpg');
-tiger = new Cat('Tiger', 'images/tiger.jpg');
+bob = new Cat('Bob', 'images/colors/grey.png');
+sally = new Cat('Sally', 'images/colors/black.png');
+max = new Cat('Max', 'images/colors/white.png');
+sebastian = new Cat('Sebastian', 'images/colors/blue.png');
+lilly = new Cat('Lilly', 'images/colors/purple.png');
+tiger = new Cat('Tiger', 'images/colors/orange.png');
 
 cats = [bob, sally, max, sebastian, lilly, tiger];
 
 for (var i = 0; i < cats.length; i++) {
 	initializeKittyCat(cats[i]);
 }
+
+$('#button').click(function() {
+	console.log('hi');
+});
