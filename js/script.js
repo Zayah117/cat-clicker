@@ -9,13 +9,13 @@ var Cat = function(name, image) {
 
 Cat.prototype.clicker = function(timesClicked, clickLabel) {
 	timesClicked += 1;
-	clickLabel.html("Times clicked: " + timesClicked);
+	clickLabel.html("Love points: " + timesClicked);
 	return timesClicked;
 };
 
 
 function initializeKittyCat(kittyCat) {
-	$('#main').append('<figure><h4 id="' + kittyCat.name + '-name"></h4><img id="' + kittyCat.name + '-image"><figcaption id="' + kittyCat.name + '-times-clicked">Times clicked: 0</figcaption></figure>')
+	$('#main').append('<figure><h4 id="' + kittyCat.name + '-name"></h4><img id="' + kittyCat.name + '-image"><figcaption id="' + kittyCat.name + '-times-clicked">Love points: 0</figcaption></figure>')
 
 	kittyCat.nameLabel = $("#" + kittyCat.name + "-name");
 	kittyCat.imageView = $("#" + kittyCat.name + "-image");
